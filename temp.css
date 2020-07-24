@@ -1,0 +1,24 @@
+table.display td {
+	font-size:	50pt;
+/*	text-align:	center;*/
+	width:		30%;
+}
+
+table.display input {
+	font-size:	50pt;
+	text-align:	right;
+	width:		90%;
+}
+	
+table.tenkey td {
+	font-size:	50pt;
+	text-align:	center;
+/*	height:		120;*/
+	width:		33%;
+}
+
+table.tenkey input {
+	font-size:	50pt;
+	height:		100%;
+	width:		100%;
+}

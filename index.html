@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<link rel="stylesheet" href="temp.css">
+<script type="text/javascript"><!--
+
+	var inputPlace = "num";
+	function onTenkey( num ){
+		//alert( num );
+
+		if( inputPlace == "" ){
+			return;
+		}
+		//alert( num );
+		var obj;
+
+		//alert( inputPlace );
+		obj = document.getElementById( inputPlace );
+		// alert( obj.value );
+		if( num == "CLEAR" ){
+			var str = obj.value;
+			if( str.length > 0 ){
+				obj.value = ""
+			}
+		} else {
+			obj.value += num;
+		} 
+
+	}
+// --></script>
+</head>
+<body>
+
+<form method="get" action="./input.php">
+<table width="100%" class="display">
+	<tr>
+		<td>体温: </td>
+		<td><input type="text" name="temp" onFocus="onNum()" id="num"></td>
+	</tr>
+</table>
+
+<table width="100%" class="tenkey">
+	<tr>
+		<td> <input type="button" value="1" onclick="onTenkey('1')"></td>
+		<td> <input type="button" value="2" onclick="onTenkey('2')"></td>
+		<td> <input type="button" value="3" onclick="onTenkey('3')"></td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="4" onclick="onTenkey('4')"></td>
+		<td> <input type="button" value="5" onclick="onTenkey('5')"></td>
+		<td> <input type="button" value="6" onclick="onTenkey('6')"></td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="7" onclick="onTenkey('7')"></td>
+		<td> <input type="button" value="8" onclick="onTenkey('8')"></td>
+		<td> <input type="button" value="9" onclick="onTenkey('9')"></td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="消去" onclick="onTenkey('CLEAR')"></td>
+		<td> <input type="button" value="0" onclick="onTenkey('0')"></td>
+		<td> <input type="submit" value="完了" id="login"> </td>
+	</tr>
+</table>
+</form>
+</body>
+</html>
