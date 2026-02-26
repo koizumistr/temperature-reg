@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
-<meta charset="utf-8"/>
-<link rel="stylesheet" href="temp.css">
-<script type="text/javascript"><!--
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="temp.css">
+  <script type="text/javascript">
 
-  var inputPlace = "num";
-  function onTenkey( num ){
-      //alert( num );
+    function onTenkey( num ){
+	//alert( num );
 
-      if( inputPlace == "" ){
-	  return;
-      }
-      //alert( num );
-      var obj;
+	const obj = document.getElementById("num");
+	if (!obj) return;
 
-      //alert( inputPlace );
-      obj = document.getElementById( inputPlace );
-      // alert( obj.value );
-      if( num == "CLEAR" ){
-	  obj.value = obj.value.substring(0, obj.value.length - 1);
-      } else {
-	  if (obj.value.length < 3)
-	      obj.value += num;
-      }
-  }
-// --></script>
+	// alert( obj.value );
+	if( num == "CLEAR" ){
+	    obj.value = obj.value.slice(0, - 1);
+	} else {
+	    if (obj.value.length < 3)
+		obj.value += num;
+	}
+    }
+  </script>
 </head>
 <body>
 
@@ -33,7 +28,7 @@
 <table width="100%" class="display">
 	<tr>
 		<td>体温: </td>
-		<td><input type="text" name="temp" onFocus="onNum()" id="num"></td>
+		<td><input type="text" name="temp" id="num" readonly autofocus></td>
 	</tr>
 </table>
 
