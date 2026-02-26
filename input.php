@@ -29,7 +29,7 @@ if ($temp < 30.0 or $temp > 40.0) {
 } else {
    $fh = fopen("__OUTPUTDIR__/temp.csv", "a");
 //   var_dump($fh);
-   fwrite($fh, sprintf("%s, %s\n", date('Y-m-d H:i:s'), $temp));
+   fputcsv($fh, [date('Y-m-d H:i:s'), $temp]);
    fclose($fh);
    $temp = 0.0;
  }

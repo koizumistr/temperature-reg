@@ -5,29 +5,26 @@
 <link rel="stylesheet" href="temp.css">
 <script type="text/javascript"><!--
 
-	var inputPlace = "num";
-	function onTenkey( num ){
-		//alert( num );
+  var inputPlace = "num";
+  function onTenkey( num ){
+      //alert( num );
 
-		if( inputPlace == "" ){
-			return;
-		}
-		//alert( num );
-		var obj;
+      if( inputPlace == "" ){
+	  return;
+      }
+      //alert( num );
+      var obj;
 
-		//alert( inputPlace );
-		obj = document.getElementById( inputPlace );
-		// alert( obj.value );
-		if( num == "CLEAR" ){
-			var str = obj.value;
-			if( str.length > 0 ){
-				obj.value = ""
-			}
-		} else {
-			obj.value += num;
-		} 
-
-	}
+      //alert( inputPlace );
+      obj = document.getElementById( inputPlace );
+      // alert( obj.value );
+      if( num == "CLEAR" ){
+	  obj.value = obj.value.substring(0, obj.value.length - 1);
+      } else {
+	  if (obj.value.length < 3)
+	      obj.value += num;
+      }
+  }
 // --></script>
 </head>
 <body>
